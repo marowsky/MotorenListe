@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Motoren Liste</string>
+    <string name="title">Motoren Liste</string>
+    <string name="action_search">Suche</string>
+    <string name="settings">Info</string>
+    <string name="ende">Beenden</string>
+</resources>
