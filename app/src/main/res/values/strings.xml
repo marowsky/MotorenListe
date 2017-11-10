@@ -4,4 +4,7 @@
     <string name="action_search">Suche</string>
     <string name="settings">Info</string>
     <string name="ende">Beenden</string>
+    <string name="start">Beenden</string>
+    <string name="title_info">Motoren Liste</string>
+    <string name="alert_info">© 2017 Peter Marowsky\n\nVersionCode: %1$d\nVersionName: %2$s</string>
 </resources>

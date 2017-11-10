@@ -3,6 +3,8 @@ package de.petesky.motorlist;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
@@ -40,6 +42,28 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private Animator mAnimator;
 
     private List<ListModel> mModels;
+
+    private void getVersionInfo() {
+        String versionName = "";
+        int versionCode = -1;
+        try {
+            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            versionName = packageInfo.versionName;
+            versionCode = packageInfo.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String message = getString(R.string.alert_info, versionCode, versionName);
+        String title = getString(R.string.title_info);
+        new MaterialDialog.Builder(MainActivity.this)
+                .theme(Theme.LIGHT)
+                .iconRes(R.mipmap.ic_launcher_round)
+                .title(title)
+                .content(message)
+                .positiveText("OK")
+                .show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.settings) {
+            /*
             new MaterialDialog.Builder(MainActivity.this)
                     .theme(Theme.LIGHT)
                     .iconRes(R.mipmap.ic_launcher_round)
@@ -98,6 +123,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                     .content("© 2017 Peter Marowsky")
                     .positiveText("OK")
                     .show();
+            */
+            getVersionInfo();
             return true;
         }
         if (id == R.id.exit){

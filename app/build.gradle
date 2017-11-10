@@ -50,7 +50,7 @@ android {
         enabled true
     }
     defaultConfig {
-        applicationId 'de.petesky.motorenliste'
+        applicationId 'de.petesky.motorlist'
         minSdkVersion 21
         targetSdkVersion 26
         versionName '0.9'
