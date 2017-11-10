@@ -53,8 +53,9 @@ android {
         applicationId 'de.petesky.motorenliste'
         minSdkVersion 21
         targetSdkVersion 26
-        versionName travisVersionName
+        versionName '0.9'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        versionCode 9
     }
     lintOptions {
         disable 'NewApi'
